@@ -93,7 +93,7 @@ Modelos de clasificación, NLP y análisis de patrones al servicio de decisiones
 
 ## Proyectos
 
-Repositorios públicos de la organización. La tabla se genera automáticamente a partir de la API de GitHub (`scripts/generate_profile.mjs`).
+Repositorios públicos de la organización.
 
 <!-- PROJECTS:START -->
 | Proyecto | Descripción | Lenguaje | Estado |
