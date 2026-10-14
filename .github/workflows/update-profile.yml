@@ -1,0 +1,40 @@
+name: Actualizar perfil de la organización
+
+# Ejecución manual (pestaña "Actions" → "Run workflow").
+# No hay cron: el perfil se regenera solo cuando alguien lo solicita.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    name: Regenerar proyectos y equipo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generar bloques dinámicos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG: JOJA-TECH
+        run: node scripts/generate_profile.mjs
+
+      - name: Commit y push (solo si hay cambios)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          if git diff --staged --quiet; then
+            echo "Sin cambios en el perfil."
+          else
+            git commit -m "chore(profile): actualizar proyectos y equipo"
+            git push
+          fi

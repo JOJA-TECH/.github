@@ -1,0 +1,25 @@
+{
+  "org": "JOJA-TECH",
+  "profileReadme": "profile/README.md",
+  "projects": {
+    "pinned": [
+      "cloud-cost-optimazer",
+      "AWS-Static-web-S3-CloudFront",
+      "windows-process-thread-lab"
+    ],
+    "exclude": [".github"],
+    "excludeArchived": true,
+    "excludeForks": true
+  },
+  "team": {
+    "order": ["Oyhs-co", "Jesus-MMM", "Jorge-0310", "andeersx"],
+    "exclude": ["github-actions[bot]", "dependabot[bot]"],
+    "overrides": {
+      "Oyhs-co": { "role": "Software Architect · AI Engineer · DevOps & CI/CD" },
+      "Jesus-MMM": { "role": "Full-Stack Developer · AI/ML Engineer · Cloud Engineer" },
+      "Jorge-0310": { "role": "QA Engineer · Database Administrator · Technical Writer" },
+      "andeersx": { "role": "Full-Stack Developer · UI/UX Designer" }
+    },
+    "includeExtra": []
+  }
+}
