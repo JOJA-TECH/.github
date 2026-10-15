@@ -1,6 +1,6 @@
 <div align="center">
 
-# JOJA Tech
+[![JOJA-Tech](../img/banner.png)](https://github.com/JOJA-TECH)
 
 **Construimos software con arquitectura, automatización e IA aplicada.**
 
